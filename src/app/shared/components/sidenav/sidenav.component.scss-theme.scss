@@ -1,0 +1,29 @@
+@import "~@angular/material/theming";
+@mixin sidenav-component-theme($theme) {
+  // retrieve variables from theme
+  // (all possible variables, use only what you really need)
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-sidenav {
+    // let's take mat-toolbar's default theme
+    // ref: https://github.com/angular/components/blob/e0b579784530e2dc4bacb23d149e7881e2a209a3/src/material/toolbar/_toolbar-theme.scss#L39-L40
+    background-color: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+
+    // now, mat-toolbar's colored themes
+    // ref: https://github.com/angular/components/blob/e0b579784530e2dc4bacb23d149e7881e2a209a3/src/material/toolbar/_toolbar-theme.scss#L6-L9
+    &[color="primary"] {
+      @include _mat-toolbar-color($primary);
+    }
+    &[color="accent"] {
+      @include _mat-toolbar-color($accent);
+    }
+    &[color="warn"] {
+      @include _mat-toolbar-color($warn);
+    }
+  }
+}

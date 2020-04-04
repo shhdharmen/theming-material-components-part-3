@@ -1,3 +1,10 @@
-<app-sidenav [themeColor]="'primary'">
-  Main Content
-</app-sidenav>
+<app-sidenav [themeColor]="themeColor">
+  Main Content <br />
+  <button mat-raised-button [color]="themeColor" (click)="openDialog()">
+    Open Dialog
+  </button>
+  <br />
+  <button mat-raised-button [color]="themeColor" (click)="openNotification()">
+    Open Notification
+  </button></app-sidenav
+>

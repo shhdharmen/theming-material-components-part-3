@@ -8,4 +8,17 @@ $theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
 $theming-material-components-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$theming-material-components-theme: mat-light-theme($theming-material-components-primary, $theming-material-components-accent, $theming-material-components-warn);
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn
+);
+
+// Theme for notifications / snackbar
+$notifications-theme: (
+  default: #fff,
+  info: mat-color(mat-palette($mat-blue), 400),
+  success: mat-color(mat-palette($mat-green), 400),
+  warning: mat-color(mat-palette($mat-yellow), 400),
+  error: mat-color(mat-palette($mat-red), 400),
+);
